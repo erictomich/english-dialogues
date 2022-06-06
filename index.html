@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diálogos</title>
+  </head>
+  <body>
+  
+    <header>
+        <h1 id="title"></h1>
+    </header>
+    <main>
+        
+        <div id="dialogue">
+            
+        </div> 
+        
+
+    </main>
+    <script>
+        function fetchData() {
+            const title = document.getElementById("title");
+            const divDialogue = document.getElementById("dialogue");
+            fetch('http://localhost:3030/dialogue/A/01/').then(function (response) {
+                // The API call was successful!
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    return Promise.reject(response);
+                }
+            }).then(function (data) {
+                
+                // This is the JSON from our response
+                console.log(data);
+
+                title.innerHTML = data.title;
+
+                var dialogue = data.dialogue;
+
+                //https://dev.to/ayomide_bajo/how-to-consume-apis-using-vanilla-js-4ie5
+
+                
+                let list = dialogue
+                    .map(
+                    (itemDialogue, index) => {
+
+                        let cod = itemDialogue.mp3.split('.')[0];
+                        
+                        let backgroundColor = (itemDialogue.person == 'A')?'#FFFFFF':'#CCCCCC';
+
+                        return `<li class="todo" style="background-color:${backgroundColor}">
+                        <p>${itemDialogue.phrase}</p>
+                        <audio controls src="http://localhost:3030/audio/${cod}"></audio>
+                        </li>`
+                    }
+                        
+                    ) //5
+                    .join(" "); //6
+
+                //7 i + 1
+
+                divDialogue.innerHTML = list;
+
+            }).catch(function (err) {
+                // There was an error
+                console.warn('Something went wrong.', err);
+            });
+        }
+
+        fetchData();
+    </script>
+  </body>
+</html>

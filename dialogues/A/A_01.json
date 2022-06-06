@@ -1,0 +1,20 @@
+{
+    "title": "Title of dialogue",
+    "level": "A",
+    "keywords": ["laptop","computer"],
+    "dialogue": 
+        [
+            {"person": "A", "phrase": "My laptop is so slow.", "mp3": "A01_01_A.mp3"},
+            {"person": "B", "phrase": "Buy a new one.", "mp3": "A01_02_B.mp3"},
+            {"person": "A", "phrase": "I would if I had the money.", "mp3": "A01_03_A.mp3"},
+            {"person": "B", "phrase": "Why is it so slow?", "mp3": "A01_04_B.mp3"},
+            {"person": "A", "phrase": "That's a good question.", "mp3": "A01_05_A.mp3"},
+            {"person": "B", "phrase": "Did you take it to a computer shop?", "mp3": "A01_06_B.mp3"},
+            {"person": "A", "phrase": "I would if I had the money.", "mp3": "A01_07_A.mp3"},
+            {"person": "B", "phrase": "Well, I guess you have to live with it.", "mp3": "A01_08_B.mp3"},
+            {"person": "A", "phrase": "Sometimes I want to throw it out the window.", "mp3": "A01_09_A.mp3"},
+            {"person": "B", "phrase": "You don't want to do that.", "mp3": "A01_10_B.mp3"},
+            {"person": "A", "phrase": "Why not?", "mp3": "A01_11_A.mp3"},
+            {"person": "B", "phrase": "You might hit someone in the head.", "mp3": "A01_12_B.mp3"}
+        ]
+}

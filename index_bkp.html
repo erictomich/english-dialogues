@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diálogos</title>
+  </head>
+  <body>
+  
+    <header>
+        <h1></h1>
+    </header>
+    <main>
+        
+        <div id="dialogue">
+            <audio controls src="http://localhost:3030/audio/A01_4_B"></audio>
+        </div> 
+        
+
+    </main>
+    <script>
+        function fetchData() {
+
+            fetch('http://localhost:3030/dialogue/A/01/').then(function (response) {
+                // The API call was successful!
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    return Promise.reject(response);
+                }
+            }).then(function (data) {
+                
+                // This is the JSON from our response
+                console.log(data);
+            }).catch(function (err) {
+                // There was an error
+                console.warn('Something went wrong.', err);
+            });
+        }
+
+        fetchData();
+    </script>
+  </body>
+</html>
